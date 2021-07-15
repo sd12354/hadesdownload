@@ -1,0 +1,130 @@
+<html>
+    <title>Hades AIO Download</title>
+    <style>
+        body{
+    background-image: url('https://i.imgur.com/9qOZmJ5.png');
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+button{
+    outline: none;
+    border: none;
+    position: relative;
+    background-color: rgb(159, 10, 228);
+    height: 40px;
+    width: 400px;
+    color: white;
+    border-radius: 10px;
+    font-size: 17px;
+    top: 200px;
+    margin: -70px;
+}
+div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(0, 0, 0);
+    height: 450px;
+    width: 500px;
+    padding-top: 20px;
+    border-radius: 20px;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+input{
+    outline: none;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+    text-align: center;
+    font-size: 17px;
+    height: 35px;
+    position: relative;
+    top: 100px;
+}
+h1{
+    font-size: 25px;
+
+}
+label{
+    top: 80px;
+    position: relative;
+    font-size: 18px;
+}
+button:active{
+    background-color: rgb(10, 228, 173);
+}
+button:hover{
+    background-color: rgb(10, 228, 173);
+}
+.status{
+    color: rgb(81, 255, 0);
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    position: relative;
+    display: block;
+    top: 90px;
+    font-size: 14px;
+}
+img{
+    height: 90px;
+    width: 90px;
+    position: relative;
+    top: 30px;
+}
+    </style>
+    <body>
+
+        <div class="container">
+            <h1>Hades AIO Download<img src="https://i.imgur.com/zExn8kI.png" draggable="false" aria-hidden="true"></h1>
+            <label for="key">Enter Your License Key Below</label>
+            <input  required id="key" type="text" autocomplete="off" placeholder="XXXX-XXXX-XXXX-XXXX">
+            <button onclick="submit()">Download</button>
+            <p id="status" class="status"></p>
+        </div>
+
+    </body>
+    <script>
+    function submit() {
+        var Bearer = 'Bearer pk_sw8kz5AxjulzhLrvOLESjBCuuACWvKM5';
+        var message = document.getElementById('status')
+        var system = "";
+        var Windows = 'hades-aio-darwin-x64-1.0.0.zip';
+        var checkBox = document.getElementById("myCheck");
+        function myFunction() {
+            if (checkBox.checked == true){
+                system = "Windows";
+}
+        }
+        var license = document.getElementById('key').value;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                
+                var info = JSON.parse(xhr.response);
+                var status = info.status;
+                if (status = "active") {
+                    document.getElementById('status').innerHTML = "Authentication Complete! Download Process Intiating...";
+                }
+                window.open(Windows)
+            }
+   
+
+
+            
+    }
+    
+
+        xhr.open('get', 'https://api.hyper.co/v4/licenses/' + license, true);
+        xhr.setRequestHeader('Authorization', Bearer);
+        xhr.send();
+    }
+
+
+    </script>
+    
+</html>
