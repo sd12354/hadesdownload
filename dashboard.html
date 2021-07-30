@@ -1,0 +1,64 @@
+<html>
+    <title>Hades AIO Dashboard</title>
+    <link rel="icon" href="logo.png">
+    <img src="logo.png" class="logo" draggable="false">
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="https://kit.fontawesome.com/2bb1db13bb.js" crossorigin="anonymous"></script>
+    <body onload="getInfo()">
+    <div class="license-info">License Info 
+            <img id="avatar" draggable="false">
+            <p class ="type" id="type"></p>
+            <p class="discord" id="discord"></p>
+            <p class="email" id="email"></p>
+            <p class="key" id="key"></p>
+            <p class="status" id="status"></p>
+            <input class="copykey" id="copykey">
+            <button class="reset" onclick="reset()">Reset License <i class="fas fa-key" style="color: white; background-color: transparent;"></i></button>
+            <button class="copy" onclick="copy()">Copy Key <i class="fas fa-paperclip" style="color: white; background-color: transparent;"></i></button>
+            <button class="billing" onclick="window.open('https://hadesaio.metalabs.gg/login')">Manage Billing Info <i class="fas fa-credit-card" style="color: white; background-color: transparent;"></i></button>
+            <button id="view" onclick="myFunction(); changeIcon()" class="view"><i class="fas fa-eye" style="color: rgb(255, 255, 255); background-color: transparent;"></i></button>
+            <button  id="hide" onclick="myFunction(); changeIcon()" class="hide"><i class="fas fa-eye-slash" style="color: rgb(255, 255, 255); background-color: transparent;"></i></button>
+            <div id="myDIV">**** **** **** ****</div>
+            <p class="d1"id="d1">Download</p>
+            <button class="windows">Windows <i class="fab fa-windows" style="color: white; background-color: transparent;"></i></button>
+            <button class="mac">Mac <i class="fab fa-apple" style="color: white; background-color: transparent;"></i></button>
+            <p></p>
+        </div>
+        <div class="analytics">Analytics
+            <p id="analytics-greeting" class="a1"></p>
+            <div class="totalcheckouts">Total Checkouts 
+                <p id="checkouts" class="stat1">0</p>
+            </div>
+            <div class="totaldeclines">Total Declines
+                <p id="declines" class="stat2">0</p>
+            </div>
+            <div class="totalspent">Total Spent
+                <p id="spent" class="stat3">0</p>
+            </div>
+        </div>
+
+            
+
+        <div class="notes">Update Notes <i class="fas fa-pencil-alt" style="color: white; background-color: transparent"></i>
+            <p class="p1">Update 1.0.0 is here!</p>
+            <p class="p2">- Brand New UI interface</p>
+            <p class="p2">- Completely Rewritten CLI</p>
+            <p class="p2">- Hyper Free and Paid Requests</p>
+
+            
+        </div>
+        <div>
+            <p>Documentation</p>
+        </div>
+        <div class="support">
+            <p class="support-txt">Support <i class="fas fa-headset" style="color: white; background-color: transparent"></i></p>
+            <p class="txt2">Email us @contacthadesaio@gmail.com</p>
+        </div>
+        <button class="doc">Documentation <i class="fas fa-book" style="color: white; background-color: transparent;"></i></button>
+        <button class="logout" onclick="logout()">Log Out <i class="fas fa-sign-out-alt" style="color: white; background-image: radial-gradient( circle farthest-corner at 14.2% 24%,  rgba(239,61,78,1) 0%, rgba(239,61,78,0.81) 51.8%, rgba(239,61,78,0.63) 84.6% );"></i></button>
+    </body>
+
+    <p id="greeting" class="welcome"></p>
+    <p class="text">Here you can view your license, recent checkouts, download the latest version of Hades AIO and more!</p>
+        <script src="dashboard.js"></script>
+</html>
